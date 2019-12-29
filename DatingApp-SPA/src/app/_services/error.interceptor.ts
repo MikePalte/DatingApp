@@ -1,5 +1,5 @@
-import { Injectable } from "@angular/core";
-import { HttpInterceptor, HttpErrorResponse, HTTP_INTERCEPTORS } from "@angular/common/http";
+import { Injectable } from '@angular/core';
+import { HttpInterceptor, HttpErrorResponse, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
 
@@ -23,7 +23,7 @@ export class ErrorInterceptor implements HttpInterceptor {
                 let modelStateErrors = '';
                 if(serverError.errors && typeof serverError.errors === 'object'){
                     for (const key in serverError.errors){
-                        if(serverError.erros[key]) {
+                        if(serverError.errors[key]) {
                             modelStateErrors += serverError.errors[key] + '\n';
                         }
                     }
